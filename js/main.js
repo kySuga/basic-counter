@@ -4,6 +4,8 @@ let count = 0;
 const number = document.querySelector("#number");
 const btns = document.querySelectorAll(".btn");
 
+// *** leaving for reference ***
+// *****************************
 // btns.forEach(function (btn) {
 //   btn.addEventListener("click", function (e) {
 //     const styles = e.currentTarget.classList;
@@ -38,15 +40,21 @@ btns.forEach(btn => {
     } else if (styles.contains("btn__reset-number")) {
       count = 0;
     }
-    if (count < 0) {
-      number.style.color = "red";
-    }
-    if (count > 0) {
-      number.style.color = "green";
-    }
-    if (count === 0) {
-      number.style.color = "var(--color-tertiary)";
-    }
+
+    // *** leaving for reference ***
+    // *****************************
+    // if (count < 0) {
+    //   number.style.color = "red";
+    // }
+    // if (count > 0) {
+    //   number.style.color = "green";
+    // }
+    // if (count === 0) {
+    //   number.style.color = "var(--color-tertiary)";
+    // }
+
+    // converted above 3x if statements into a ternary statement
+    number.style.color = count < 0 ? "red": count > 0 ? "green": "var(--color-tertiary)";
     number.textContent = count;
   });
 });
